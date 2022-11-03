@@ -1,0 +1,213 @@
+/* This CSS file is used to overwrite changes that the BootStrap CSS
+   file makes. It's far easier to tweak certain elements here rather than
+	 trying to find them in the BootStrap CSS file. I can also preserve
+	 the original BootStrap CSS file this way.*/
+
+/* The following section changes certain CSS settings that are set by BootStrap
+	 by default. This is done to match the design of my website to the initial
+	 design in the UI design document*/
+
+.jumbotron {
+	margin-bottom: 0;
+	padding: 1rem 1rem;
+}
+
+.jumbotron h1 {
+	color: white;
+}
+
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.nav-item {
+	color: white;
+}
+
+.container h2 {
+	padding-left: 0;
+}
+
+@media screen and (max-width: 480px) {
+	h6 {
+		font-size: 0.7em;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	h6 {
+		font-size: 0.6em;
+	}
+}
+
+/* The following section changes the homepage text size when the screen
+ 	 width is below a certain length (measured in px)*/
+
+.hometext {
+	margin-left: 2%;
+}
+
+@media screen and (max-width: 1200px) {
+	.hometext {
+		font-size: 4em;
+	}
+}
+
+@media screen and (max-width: 830px) {
+	.hometext {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 565px) {
+	.hometext {
+		font-size: 3em;
+	}
+}
+
+@media screen and (max-width: 565px) {
+	.hometext {
+		font-size: 2em;
+	}
+}
+
+.homeheight {
+	height: 300px;
+}
+
+@media screen and (max-width: 1000px) {
+	.homeheight {
+		height: 200px;
+	}
+}
+
+@media screen and (max-width: 830px) {
+	.homeheight {
+		height: 150px;
+	}
+}
+
+
+@media screen and (max-width: 420px) {
+	.homeheight {
+		height: 150px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.homeheight {
+		height: 75px;
+	}
+}
+
+.homepara {
+	margin-left: 3%;
+	margin-top: 2%;
+}
+
+@media screen and (max-width: 830px) {
+	.homepara {
+		text-align: center;
+	}
+}
+
+/* The following section changes the homepage picture. Due to the way I
+	 designed the homepage and the way that BootStrap works, I needed to rely on
+	 pure CSS to change how the picture appears on the homepage. This is due to
+	 the picture needing to overlap other div elements. I couldn't figure out a
+	 way to do this using default BootStrap which is why this section exists.
+
+	 Additionally, I have used em and px where necessary to avoid problems with
+	 the picture when the screen size changes. If I didn't use 'em' here the
+	 picture would drag up along the homepage.*/
+
+.homepic {
+	margin-left: 60%;
+	margin-top: 15em;
+	position: absolute;
+	width: 442px;
+	height: 350px;
+}
+
+@media screen and (max-width: 1400px) {
+	.homepic {
+		margin-left: 70%;
+		margin-top: 18em;
+		width: 331px;
+		height: 262px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.homepic {
+		margin-left: 60%;
+		margin-top: 15em;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.homepic {
+		margin-left: 70%;
+		margin-top: 12em;
+		width: 248px;
+		height: 196px;
+	}
+}
+
+@media screen and (max-width: 830px) {
+	.homepic {
+		margin-left: 45%;
+		margin-top: 3em;
+		width: 124px;
+		height: 98px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.homepic {
+		margin-left: 40%;
+	}
+}
+
+@media screen and (max-width: 565px) {
+	.homepic {
+		margin-left: 40%;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.homepic {
+		margin-left: 35%;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.homepic {
+		margin-left: 38%;
+		margin-top: 1em;
+		width: 70px;
+		height: 55px;
+	}
+}
+
+.timealign {
+	text-align: center;
+}
+
+.breadDesign {
+	width: 100%;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	background-color: #FFFFFF;
+}
+
+.buttonalign {
+	margin-right: 2%;
+}
+
+@media screen and (max-width: 475px) {
+	.buttonalign {
+		margin-right: 0%;
+		margin-left: 1%;
+}

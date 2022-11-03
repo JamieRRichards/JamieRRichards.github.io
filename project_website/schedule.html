@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Purple Foundation | Schedule</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <!--The nav class below is the top navigation bar of the website.
+      This includes the social media icons and login link
+      The following webpage was used to help me set it up.
+      Link: https://getbootstrap.com/docs/4.0/components/navbar/-->
+
+    <nav class="navbar navbar-dark" style="background-color: #351c75;">
+      <a class="navbar-brand" href="https://discord.gg/pNDkwES" target="_blank">
+        <img src="images/Discord/Discord-Logo-White.png" width="30" height="30" alt="discordlogo">
+      </a>
+      <a class="navbar-brand" href="https://twitter.com/ImBarnacleBoy" target="_blank">
+        <img src="images/Twitter/Twitter_Social_Icon_Rounded_Square_White.png" width="30" height="30" alt="twitterlogo">
+      </a>
+      <a class="navbar-brand" href="https://twitch.com/Purple_foundation" target="_blank">
+        <img src="images/Twitch/TwitchGlitchWhite.png" width="30" height="30" alt="twitchlogo">
+      </a>
+      <hr/>
+
+      <li class="nav navbar-nav ml-auto">
+        <a class="nav-link" href="login.html"><span class="fas fa-sign-in-alt"></span> Login</a>
+      </li>
+    </nav>
+
+    <hr/>
+
+  <!--The div class below is the heading section for the website.
+      The Bootstrap Jumbotron documentation page can be found below.
+      Link: https://getbootstrap.com/docs/4.0/components/jumbotron/ -->
+
+    <div class="jumbotron jumbotron-fluid text-center" style="background-color: #351c75;">
+      <div class="container">
+        <h1>Purple Foundation</h1>
+      </div>
+    </div>
+
+<!--The nav bar below collapses when the menu width can no longer fit on the screen.
+    Bootstraps documentation was very helpful in setting this up.
+    The following webpage was used to help me set it up.
+    Link: https://getbootstrap.com/docs/4.0/components/navbar/-->
+
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #351c75; font-size: 20px;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav nav-fill w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gamelist.html">Achievements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold active" href="schedule.html">Stream Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="social.html">Social Media</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report.html">Report</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<br/>
+
+<!--The section below is the main heading section of this webpage. -->
+
+<div class="container-fluid">
+  <div class="row" style="margin-left: 1%;">
+    <div class="col">
+      <h1>Stream Schedule</h1>
+    </div>
+    <br/>
+    <div class="row buttonalign">
+      <div class="float-right">
+        <form action="schedule/schedule_edit.html">
+          <button class="btn btn-primary btn-lg">Edit schedule</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+<!--The hr tag is used to seperate different parts of the webpage. -->
+<hr style="background-color: black;">
+
+<br/>
+
+<!--The section below is a general description about the stream schedule as well
+    as a link where the client's live stream can be found. -->
+
+<div class="container-fluid">
+  <div class="row" style="margin-left: 1%;">
+    <div class="col">
+      <h4>This is my current streaming schedule. However, it changes often so check back regularly
+          for updates!</h4>
+    </div>
+  </div>
+  <br/>
+  <div class="row" style="margin-left: 1%;">
+    <div class="col">
+      <h4>You can find my stream at <a href="https://twitch.tv/Purple_Foundation" target="_blank">twitch.tv/Purple_Foundation</a></h4>
+    </div>
+  </div>
+</div>
+
+<br/>
+<!--The hr tag is used to seperate different parts of the webpage. -->
+<hr style="background-color: black;">
+
+<br/>
+
+<br/>
+
+<!--The section below is the core part of the schedule webpage.
+    A HTML table is used to organise the client's stream schedule by each day.
+    PHP is used to retrieve information from a database and then inserted into
+    the table using a for loop. -->
+
+<!--The table below incorporates Bootstrap elements to style it and make it
+    responsive.
+    The Bootstrap tables documentation page was very helpful in settings this up.
+    Link: https://getbootstrap.com/docs/4.0/content/tables/ -->
+
+<div class="container-fluid">
+    <table class="table table-hover table-bordered" align="center" style="width: 75%;">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Day of Week:</th>
+          <th scope="col">Start Time:</th>
+          <th scope="col">Finish Time:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          /*The following section requires the files below to be accessible in order for this PHP
+          file to run. If these files are not available then the PHP file will produce a fatal error.*/
+          require 'get_db_handle_path.html';
+          require GET_DB_HANDLE_PATH."/get_db_handle.html";
+
+          /*The following section creates a variable called $conn and it gets assigned to "get_db_handle.*/
+          $conn = get_db_handle();
+
+          /*The following section creates a variable called $schedule and makes it equal to $conn.
+          The prepared satement is also assigned to $conn here. I also used the SQL clause "order by"
+          which will retrieve the list in order of the id first.*/
+          $schedule = $conn -> prepare("select * from stream_schedule order by id");
+
+          /*The following section simply executes the variable.*/
+          $schedule -> execute();
+
+          /*The following section is a for loop which echos out all of the information in the
+          database that is selected by the SQl query above and then prints out information based on the selected
+          database headings such as "day_of_week", etc.
+          This is done using the PDO statement fetchAll. fetchAll returns an arrary containing all of the result
+          set rows (the SQL used).
+          The PHP documentation for fetchAll helped me set this up, the link can be found below.
+          Link: https://www.html.net/manual/en/pdostatement.fetchall.html*/
+
+          $arr = $schedule->fetchAll(PDO::FETCH_ASSOC);
+                for($i=0; $i<sizeof($arr); $i++) {
+                  echo '<tr>';
+                    echo '<td>';
+                    #The "day_of_week" is the heading of a database column
+                      echo $arr[$i]['day_of_week'];
+                        echo '<td>';
+                      echo $arr[$i]['start_time'];
+                        echo '<td>';
+                      echo $arr[$i]['finish_time'];
+                    echo '</td>';
+                  echo '</tr>';
+                }
+          /*The following section sets the variables to equal null, this is done for
+          security reasons.*/
+          $schedule = null;
+          $conn = null;
+        ?>
+      </tbody>
+    </table>
+  <br/>
+</div>
+
+</body>
+</html>

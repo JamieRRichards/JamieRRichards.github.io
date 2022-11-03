@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Purple Foundation | Blog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <!--The nav class below is the top navigation bar of the website.
+      This includes the social media icons and login link
+      The following webpage was used to help me set it up.
+      Link: https://getbootstrap.com/docs/4.0/components/navbar/-->
+
+    <nav class="navbar navbar-dark" style="background-color: #351c75;">
+      <a class="navbar-brand" href="https://discord.gg/pNDkwES" target="_blank">
+        <img src="images/Discord/Discord-Logo-White.png" width="30" height="30" alt="discordlogo">
+      </a>
+      <a class="navbar-brand" href="https://twitter.com/ImBarnacleBoy" target="_blank">
+        <img src="images/Twitter/Twitter_Social_Icon_Rounded_Square_White.png" width="30" height="30" alt="twitterlogo">
+      </a>
+      <a class="navbar-brand" href="https://twitch.com/Purple_foundation" target="_blank">
+        <img src="images/Twitch/TwitchGlitchWhite.png" width="30" height="30" alt="twitchlogo">
+      </a>
+      <hr/>
+
+      <li class="nav navbar-nav ml-auto">
+        <a class="nav-link" href="login.html"><span class="fas fa-sign-in-alt"></span> Login</a>
+      </li>
+    </nav>
+
+    <hr/>
+
+    <!--The div class below is the heading section for the website.
+        The Bootstrap Jumbotron documentation page can be found below.
+        Link: https://getbootstrap.com/docs/4.0/components/jumbotron/ -->
+
+    <div class="jumbotron jumbotron-fluid text-center" style="background-color: #351c75;">
+      <div class="container">
+        <h1>Purple Foundation</h1>
+      </div>
+    </div>
+
+    <!--The nav bar below collapses when the menu width can no longer fit on the screen.
+        Bootstraps documentation was very helpful in setting this up.
+        The following webpage was used to help me set it up.
+        Link: https://getbootstrap.com/docs/4.0/components/navbar/-->
+
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #351c75; font-size: 20px;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav nav-fill w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gamelist.html">Achievements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="schedule.html">Stream Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold active" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="social.html">Social Media</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report.html">Report</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<br/>
+
+<!--A header is placed here so that when the side menu option "Jump to most recent
+    blog post" is selected the user will be taken to the top of the page. -->
+<header id="header"></header>
+
+
+<!--The section below is the main heading section of this webpage. -->
+
+<div class="container-fluid">
+  <div class="row" style="margin-left: 1%;">
+    <div class="col">
+      <h1>Welcome to my blog</h1>
+    </div>
+    <br/>
+    <div class="row buttonalign">
+      <div class="float-right">
+        <form action="blog/blog_insert.html">
+          <button class="btn btn-primary btn-lg">Add post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<!--The hr tag is used to seperate different parts of the webpage. -->
+<hr style="background-color: black;">
+
+<br/>
+
+<!--The section below is what ouputs each blog post. PHP is used to echo out
+    text in the database as well as a container for each post.-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <?php
+      /*The following section requires the files below to be accessible in order for this PHP
+      file to run. If these files are not available then the PHP file will produce a fatal error.*/
+      require 'get_db_handle_path.html';
+      require GET_DB_HANDLE_PATH."/get_db_handle.html";
+
+      /*The following section creates a variable called $conn and it gets assigned to "get_db_handle.*/
+      $conn = get_db_handle();
+
+      /*The following section creates a variable called $posts and makes it equal to $conn.
+      The prepared satement is also assigned to $conn here. The prepared statement uses the SQL
+      clause "order by date DESC" which orders the posts by the date but in descending order. */
+      $posts = $conn -> prepare("select * from posts order by date DESC");
+
+      /*The following section simply executes the variable.*/
+      $posts -> execute();
+
+      $arr = $posts->fetchAll(PDO::FETCH_ASSOC);
+        for($i=0; $i<sizeof($arr); $i++) {
+            #The start of the for loop creates a div container to hold the blog posts.
+              echo '<div class="container-fluid" style="margin-left: 1%;">';
+                echo '<div class="container-fluid" style="background-color: grey;">';
+                  echo '<br/>';
+                  echo '<div class="row">';
+                    echo '<div class="container-fluid col">';
+                      echo '<h3>';
+                        #The "title" is the heading of a database column
+                        echo $arr[$i]['title'];
+                      echo '</h3>';
+                    echo '</div>';
+                    echo '<div class="container-fluid col">';
+                      echo '<div style="text-align: right;">';
+                        #The "date" is the heading of a database column
+                        echo $arr[$i]['date'];
+                        echo '<br />';
+                        echo '<br />';
+                      echo '</div>';
+                    echo '</div>';
+                  #This is the end of the row, the content below will be generated on a new line.
+                  echo '</div>';
+                    #hr is used here to seperate the title and date from the post description.
+                    echo '<hr style="background-color: black;">';
+                    echo '<br />';
+                  echo '<div class="row">';
+                    echo '<div class="container-fluid col">';
+                      #The "description" is the heading of a database column
+                      echo $arr[$i]['description'];
+                      echo '<br />';
+                      echo '<div class="float-right">';
+                      /*The line of code below was taken from a stackoverflow post and
+                      has been adapted to suit my code. The link to the webpage is below*/
+                      #https://stackoverflow.com/questions/43286387/adding-a-delete-button-in-php-on-each-row-of-a-mysql-table/43286487
+                        echo "<a href='blog/blog_delete.html?id=".$arr[$i]['id']."'><strong>Delete</strong></a>";
+                      #End of stackoverflow code.
+                      echo '</div>';
+                    echo '</div>';
+                  echo '</div>';
+                  echo '<br />';
+                echo '</div>';
+                      echo '<br/>';
+                      #hr is used here to seperate each blog post.
+                      echo '<hr style="background-color: black;">';
+                      echo '<br/>';
+              echo '</div>';
+            }
+      /*The following section sets the variables to equal null, this is done for
+      security reasons.*/
+      $posts = null;
+      $conn = null;
+      ?>
+    <!--The section below is normal HTML as I don't need to retrieve dynamic content here.-->
+    </div>
+    <div class="col-md-1">
+      <!-- This is a space between the blog entries and the side menu -->
+    </div>
+    <!--The section below is the side menu. The side menu is used to jump to the top or the bottom of the
+        the page. This menu auto collapses when a certain width is met.-->
+    <div class="col-md-3" style="text-align: center;">
+      <div class="sticky-top">
+        <h5>Quick Links</h5>
+        <br/>
+        <hr style="background-color: #351c75; height: 18px;">
+        <br/>
+        <p><a href="#header">Jump to most recent blog post</a></p>
+        <br/>
+        <p><a href="#footer">Jump to oldest blog post</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--The footer below is linked to the side menu. When the side menu option "Jump to oldest blog post"
+    is selected the users will be taken to the bottom of the page.-->
+<footer id="footer"></footer>
+
+</body>
+</html>

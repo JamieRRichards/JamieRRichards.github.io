@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Purple Foundation | Social</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <!--The nav class below is the top navigation bar of the website.
+      This includes the social media icons and login link
+      The following webpage was used to help me set it up.
+      Link: https://getbootstrap.com/docs/4.0/components/navbar/-->
+
+    <nav class="navbar navbar-dark" style="background-color: #351c75;">
+      <a class="navbar-brand" href="https://discord.gg/pNDkwES" target="_blank">
+        <img src="images/Discord/Discord-Logo-White.png" width="30" height="30" alt="discordlogo">
+      </a>
+      <a class="navbar-brand" href="https://twitter.com/ImBarnacleBoy" target="_blank">
+        <img src="images/Twitter/Twitter_Social_Icon_Rounded_Square_White.png" width="30" height="30" alt="twitterlogo">
+      </a>
+      <a class="navbar-brand" href="https://twitch.com/Purple_foundation" target="_blank">
+        <img src="images/Twitch/TwitchGlitchWhite.png" width="30" height="30" alt="twitchlogo">
+      </a>
+      <hr/>
+
+      <li class="nav navbar-nav ml-auto">
+        <a class="nav-link" href="login.html"><span class="fas fa-sign-in-alt"></span> Login</a>
+      </li>
+    </nav>
+
+    <hr/>
+
+    <!--The div class below is the heading section for the website.
+        The Bootstrap Jumbotron documentation page can be found below.
+        Link: https://getbootstrap.com/docs/4.0/components/jumbotron/ -->
+
+    <div class="jumbotron jumbotron-fluid text-center" style="background-color: #351c75;">
+      <div class="container">
+        <h1>Purple Foundation</h1>
+      </div>
+    </div>
+
+    <!--The nav bar below collapses when the menu width can no longer fit on the screen.
+        Bootstraps documentation was very helpful in setting this up.
+        The following webpage was used to help me set it up.
+        Link: https://getbootstrap.com/docs/4.0/components/navbar/-->
+
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #351c75; font-size: 20px;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav nav-fill w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gamelist.html">Achievements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="schedule.html">Stream Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  font-weight-bold active" href="social.html">Social Media</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report.html">Report</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<br/>
+
+<!--The section below is the main heading section of this webpage. -->
+
+<div class="container-fluid">
+  <div class="row" style="margin-left: 1%;">
+    <div class="col">
+      <h1>Social Media Links</h1>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<!--The hr tag is used to seperate different parts of the webpage. -->
+<hr style="background-color: black;">
+
+<br/>
+
+<!--The section below tells the user that they can click on a social media
+    platform image below to be taking to the client's profile.-->
+
+<div class="container-fluid">
+  <div class="row" style="margin-left: 1%;">
+    <div class="col">
+      <h4>Please click on an image below to be redirected to my social media pages.</h4>
+    </div>
+  </div>
+  <br/>
+  <div class="row" style="margin-left: 1%;">
+    <div class="col">
+      <h4>I look forward to talking to you all!</h4>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<!--The hr tag is used to seperate different parts of the webpage. -->
+<hr style="background-color: black;">
+
+<br/>
+
+<!--The section below is a set of social media icons which when selected, redirect the user to the
+    clients social media profile on said platform.-->
+
+<div class="container-fluid" style="text-align: center;">
+  <div class="row">
+    <div class="col">
+      <a class="navbar-brand" href="https://discord.gg/pNDkwES" target="_blank">
+        <img src="images/Discord/Discord-Logo+Wordmark-Color.png" width="350" height="136" alt="discord_logo">
+      </a>
+      <p>Join my discord server to interact with me and the community daily</p>
+    </div>
+    <div class="col">
+      <a class="navbar-brand" href="https://twitter.com/ImBarnacleBoy" target="_blank">
+        <img src="images/Twitter/Twitter_Social_Icon_Rounded_Square_Color.png" width="150" height="150" alt="twitter_logo">
+      </a>
+      <p><br/>Follow me on Twitter for updates about the blog and other information about the stream</p>
+    </div>
+    <div class="col">
+      <a class="navbar-brand" href="https://twitch.com/Purple_foundation" target="_blank">
+        <img src="images/Twitch/TwitchExtrudedWordmarkPurple.png" width="300" height="110" alt="twitch_logo">
+      </a>
+      <p><br/>Follow me on Twitch to find out when I'm live. Also, consider subscribing to me for only £5 a month
+         to get exclusive emotes to use in chat and the Discord server</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

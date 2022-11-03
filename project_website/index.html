@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Purple Foundation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <!--The nav class below is the top navigation bar of the website.
+      This includes the social media icons and login link
+      The following webpage was used to help me set it up.
+      Link: https://getbootstrap.com/docs/4.0/components/navbar/-->
+
+    <nav class="navbar navbar-dark" style="background-color: #351c75;">
+      <a class="navbar-brand" href="https://discord.gg/pNDkwES" target="_blank">
+        <img src="images/Discord/Discord-Logo-White.png" width="30" height="30" alt="discordlogo">
+      </a>
+      <a class="navbar-brand" href="https://twitter.com/ImBarnacleBoy" target="_blank">
+        <img src="images/Twitter/Twitter_Social_Icon_Rounded_Square_White.png" width="30" height="30" alt="twitterlogo">
+      </a>
+      <a class="navbar-brand" href="https://twitch.com/Purple_foundation" target="_blank">
+        <img src="images/Twitch/TwitchGlitchWhite.png" width="30" height="30" alt="twitchlogo">
+      </a>
+      <hr/>
+
+      <li class="nav navbar-nav ml-auto">
+        <a class="nav-link" href="login.html"><span class="fas fa-sign-in-alt"></span> Login</a>
+      </li>
+    </nav>
+
+    <hr/>
+
+    <!--The div class below is the heading section for the website.
+        The Bootstrap Jumbotron documentation page can be found below.
+        Link: https://getbootstrap.com/docs/4.0/components/jumbotron/ -->
+
+    <div class="jumbotron jumbotron-fluid text-center" style="background-color: #351c75;">
+      <div class="container">
+        <h1>Purple Foundation</h1>
+      </div>
+    </div>
+
+    <!--The nav bar below collapses when the menu width can no longer fit on the screen.
+        Bootstraps documentation was very helpful in setting this up.
+        The following webpage was used to help me set it up.
+        Link: https://getbootstrap.com/docs/4.0/components/navbar/-->
+
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #351c75; font-size: 20px;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav nav-fill w-100">
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gamelist.html">Achievements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="schedule.html">Stream Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="social.html">Social Media</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report.html">Report</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <hr/>
+
+<!--The section below is used to generate the blocks of colours, text and a photo
+    on the index page.-->
+
+<div class="container-fluid">
+  <div class="row" style="color: white;">
+      <div class="container-fluid">
+        <!--Bootstrap wouldn't let me setup a coloured rectangle easily, so I had to
+            create my own CSS for it. It has the class "homeheight" so I can add this
+            in using CSS.-->
+        <div class="row homeheight" style="background-color: #434343;">
+          <!--The picture used here had to be referenced in the CSS file so that it
+              responded the way I wanted. Bootstrap didn't allow me to make the image
+              overlap divs and made the size and positiong annoying.-->
+          <img class ="homepic" src="images/profilepic.png" alt="profilepic">
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row" style="background-color: #434343;">
+          <h1 class="display-1 col hometext"><strong> Welcome to the </strong></h1>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row" style="background-color: #351c75;">
+          <h1 class="display-1 col hometext"><strong>Purple Foundation</strong></h1>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row homeheight" style="background-color: #351c75;">
+          <p class="col homepara"><em>Video game live stream and enthusiast</em></p>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>
