@@ -1,22 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Welcome to my website!</title>
-		<link href="https://JamieRRichards.github.io/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		<script src="https://JamieRRichards.github.io/bootstrap/js/bootstrap.min.js"> </script>
-	</head>
-	<body>
-		<nav class="navbar sticky-top navbar-dark bg-dark">
-  		<a class="navbar-brand" href="#">Home</a>
-		</nav>
-		<div class="container">
-  		<h1>Hello World</h1>
-		</div>
-		<p>This is a test.</p>
-		<nav class="navbar navbar-dark bg-dark">
-  		<a class="navbar-brand">Jamie Richards</a>
-		</nav>
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Jamie Richards | ePortfolio</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Jamie Richards</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">PORTFOLIO</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">ABOUT</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/Picture1.png" alt="">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0">Jamie Richards ePortfolio</h1>
+				        <br/>
+				        <br/>
+                <!-- Masthead Subheading-->
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0">UX/UI, Web Design & Front End Developer</p>
+            </div>
+        </header>
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">PORTFOLIO</h2>
+                </div>
+				        <br/>
+				        <br/>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Items-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="assets/img/portfolio/finalyear.png" alt="Final Year Project"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="assets/img/portfolio/film.png" alt="Short Film"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="assets/img/portfolio/gproject.png" alt="JavaScipt Canvas Game"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="assets/img/portfolio/javascriptpic.png" alt="JavaScipt Canvas Game"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="assets/img/portfolio/future.png" alt="Future Projects"/>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="text-center">
+                  <h2 class="page-section-heading text-secondary mb-0 d-inline-block">UI Game Design Concepts</h2>
+                </div>
+                <br/>
+                <br/>
+                <div class="row justify-content-center">
+                  <div class="col-md-6 col-lg-4 mb-5">
+                      <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                              <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                          </div><img class="img-fluid" src="assets/img/portfolio/CB77Menu.png" alt="Cyberpunk 2077 Main Menu Concept Art"/>
+                      </div>
+                  </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="assets/img/portfolio/mobilecargamecover.png" alt="Untitled Car Mobile Game"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Modal-->
+        <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal0Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary mb-0 text-center">Final Year Major Project:<br/> Website Design for Client</h2>
+                  									<br/>
+                                    <h5 class="text-secondary mb-0 text-center">Select an image to make it larger</h5> <p class="text-secondary mb-0 text-center">(Opens in new tab)</p>
+                                    <br/>
+                                    <!-- Portfolio Modal - Text-->
+                  									<b><p class="mb-5 text-center">The final website can be found<a href="https://users.aber.ac.uk/jar59/client_website_example/" target="_blank"> here</a>.</b> </p>
+                                    <div class="text-center">
+                                      <h3>Skills & Technologies Used</h3>
+                                    </div>
+                                    <br/>
+                  									<h4>Skills</h4>
+                  									<ul>
+                                      <li>Time Management</li>
+                                      <li>Waterfall Model Design</li>
+                                      <li>Identifying the Client's Requirements</li>
+                                      <li>Creating Navigation Diagram</li>
+                  										<li>Creating Website Wireframes</li>
+                  										<li>Developing Prototypes</li>
+                  										<li>Self Evaluation of Designs</li>
+                                      <li>Conducting a Cognitive Walkthrough</li>
+                                      <li>Adapting to Feedback</li>
+                  									</ul>
+                                    <br/>
+                  									<h4>Technologies</h4>
+                  									<ul>
+                                      <li><a href="https://www.gimp.org/" target="_blank">GIMP </a>was used for brainstorming and planning (Rich Picture).</li>
+                                      <li><a href="https://app.diagrams.net/" target="_blank">Draw.io </a> was used to create diagrams.
+                  										<li><a href="https://www.google.co.uk/slides/about/" target="_blank">Google Slides </a>was used to create website wireframes, and website prototypes.</li>
+                  										<li><a href="https://getbootstrap.com/" target="_blank">Bootstrap </a>was the CSS framework of choice. It allowed me to create a responsive, and mobile-first website.</li>
+                  										<li><a href="https://www.php.net/" target="_blank">PHP </a>was used to store and retrieve information from a database</li>
+                  										<li><a href="https://www.postgresql.org/" target="_blank">PostgreSQL </a>was the database of choice.</li>
+                  										<li><a href="https://about.gitlab.com/" target="_blank">GitLab </a>was used for source control.</li>
+                  									</ul>
+                  									<br/>
+                                    <br/>
+                                    <div class="text-center">
+                                      <h3>Development Screenshots</h3>
+                                      <br/>
+                                      <h4>Rich Picture</h4>
+                                      <p>At the start of the project, I made a rich picture (below) to visualise the client's requirements and how each stakeholder will interact with the website.</p>
+                                      <a href="assets/img/portfolio/richpicture.png" target="_blank">
+                                        <img class="img-fluid rounded mb-5 text-center" src="assets/img/portfolio/richpicture.png" alt="Project Rich Picture"/>
+                                      </a>
+                                      <h4>Use Case Diagram</h4>
+                                      <p>The use case diagram was developed from the previous rich picture. The use case diagram shows the areas which the stakeholders have access to on the website.</p>
+                                      <a href="assets/img/portfolio/usecasediagram.png" target="_blank">
+                                        <img class="img-fluid rounded mb-5 text-center" src="assets/img/portfolio/usecasediagram.png" alt="Project Use Case Diagram"/>
+                                      </a>
+                                      <h4>Navigation Diagram</h4>
+                                      <p>The navigation diagram incorporates all points identified in the rich picture and use case diagram. With this information, I can make a basic structure of the website and start to think about the UI design.</p>
+                                      <a href="assets/img/portfolio/navigationdiagram.png" target="_blank">
+                                        <img class="img-fluid rounded mb-5 text-center" src="assets/img/portfolio/navigationdiagram.png" alt="Project Navigation Diagram"/>
+                                      </a>
+                                      <h4>Wireframe Design</h4>
+                                      <p>The wireframe design below is the homepage design. This also includes the menu design which will be used throughout the website. Multiple other wireframes were made for the rest of the website before moving to the prototype.</p>
+                                      <a href="assets/img/portfolio/wifeframe.png" target="_blank">
+                                        <img class="img-fluid rounded mb-5 text-center" src="assets/img/portfolio/wifeframe.png" alt="Webpage Wireframe"/>
+                                      </a>
+                                      <h4>Prototype</h4>
+                                      <p>The prototype was created using <a href="https://www.google.co.uk/slides/about/" target="_blank">Google Slides</a>. It uses hyperlinks to simulate website navigation. With the prototype made, I conducted a cognitive walkthrough to gather feedback about the design. </p>
+                                      <a href="assets/img/portfolio/prototype.png" target="_blank">
+                                        <img class="img-fluid rounded mb-5 text-center" src="assets/img/portfolio/prototype.png" alt="Prototype Homepage"/>
+                                      </a>
+                                      <a href="assets/img/portfolio/prototype1.png" target="_blank">
+                                        <img class="img-fluid rounded mb-5 text-center" src="assets/img/portfolio/prototype1.png" alt="Prototype Achievements Page"/>
+                                      </a>
+                                      <a href="assets/img/portfolio/prototype2.png" target="_blank">
+                                        <img class="img-fluid rounded mb-5 text-center" src="assets/img/portfolio/prototype2.png" alt="Prototype Stream Schedule"/>
+                                      </a>
+                                      <b><p>The final interactive prototype can be viewed/downloaded from <a href="assets/prototype.pdf" target="_blank">here.</a></p></b>
+                                      <br/>
+                                      <br/>
+                                      <h4>Updated Design</h4>
+                                      <p>Following feedback from the cognitive walkthrough, I started to create a live website with appropriate design changes. This allowed me to improve the design further.</p>
+                                      <a href="assets/img/portfolio/finalproject.PNG" target="_blank">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/finalproject.PNG" alt="Project Updated Homepage"/>
+                                      </a>
+                                      <a href="assets/img/portfolio/prototype3.png" target="_blank">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/prototype3.png" alt="Project Updated Achievements"/>
+                                      </a>
+                                      <a href="assets/img/portfolio/prototype4.png" target="_blank">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/prototype4.png" alt="Project Updated Stream Schedule"/>
+                                      </a>
+                                      <b><p>The final website can be found<a href="https://users.aber.ac.uk/jar59/client_website_example/" target="_blank"> here.</a> </p></b>
+                                    </div>
+                                    <br/>
+
+                  									<div class="text-center">
+                  										<button class="btn btn-primary" ref="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                  									</div>
+								                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary mb-0 text-center">Short Animated Film:<br/> Mo the Mars Rover</h2>
+              									<br/>
+                                <h5 class="text-secondary mb-0 text-center">Select an image to make it larger</h5> <p class="text-secondary mb-0 text-center">(Opens in new tab)</p>
+              									<br/>
+                                <a href="assets/img/portfolio/rover.PNG" target="_blank">
+                                  <img class="img-fluid rounded mb-5" src="assets/img/portfolio/rover.PNG" alt="Mo The Mars Rover"/>
+                                </a>
+                                <!-- Portfolio Modal - Text-->
+              									<b><p class="mb-5 text-center">The film can be found <a href="https://www.youtube.com/watch?v=lvPCi_6kppo" target="_blank"> here.</a> </p> </b>
+                                <div class="text-center">
+                                  <h3>Skills & Technologies Used</h3>
+                                </div>
+                                <br/>
+              									<h5>Skills</h5>
+              									<ul>
+              										<li>3D Modelling</li>
+              										<li>Texturing</li>
+              										<li>Environment Design</li>
+              										<li>Animation</li>
+              										<li>Sound Design</li>
+              										<li>Video Editing</li>
+              									</ul>
+                                <br/>
+              									<h5>Technologies</h5>
+              									<ul>
+              										<li><a href="https://www.blender.org/" target="_blank">Blender </a>was primarily used to create the film. </li>
+              										<li><a href="https://www.gimp.org/" target="_blank">GIMP </a>was used to create and edit textures. These images were then imported into Blender and mapped to the 3D models.</li>
+              									</ul>
+              									<br/>
+              									<div class="text-center">
+              										<button class="btn btn-primary" ref="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+              									</div>
+              								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary mb-0 text-center">Group Project</h2>
+              									<br/>
+              									<br/>
+                                <!-- Portfolio Modal - Text-->
+                                <div class="text-center">
+                                  <h5>Project Summary</h5>
+                                  <p>For the group project, we were put into random groups of five and set the task of creating an online booking registration system. <br/>
+                                    My initial role within the group was to create an in-depth test plan to ensure sure that the website functioned as intended. After I completed the test plan, I quickly adapted to working with the front-end development team to create responsive web pages.</p>
+                                </div>
+                                <br/>
+                                <br/>
+                                <div class="text-center">
+                                  <h3>Skills & Technologies Used</h3>
+                                </div>
+                                <br/>
+              									<h5>Skills</h5>
+              									<ul>
+              										<li>Team Work</li>
+                                  <li>Communication</li>
+                                  <li>Leadership</li>
+                                  <li>Problem Solving</li>
+                                  <li>Decision Making</li>
+                                  <li>Organising</li>
+              									</ul>
+                                <br/>
+              									<h5>Technologies</h5>
+              									<ul>
+              										<li><a href="https://about.gitlab.com/" target="_blank">GitLab </a>was used as a central repository. It was also useful for version control as the whole group was able to work on files independently.</li>
+              										<li><a href="https://wordpress.com/WordPress" target="_blank">WordPress </a>was used to create a private blog about the project. I updated the blog regularly about individual and group progress throughout development. It was also useful to keep track of how many hours I had spent on the project. My blog for the project can be found <a href="https://users.aber.ac.uk/jar59/wordpress/" target="_blank">here</a>.</li>
+                                  <li>HTML and CSS were used to create the front end of the system.</li>
+              									</ul>
+              									<br/>
+              									<div class="text-center">
+              										<button class="btn btn-primary" ref="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+              									</div>
+              								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal4Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary mb-0 text-center">JavaScipt Canvas Game</h2>
+              									<br/>
+                                <h5 class="text-secondary mb-0 text-center">Select an image to make it larger</h5> <p class="text-secondary mb-0 text-center">(Opens in new tab)</p>
+              									<br/>
+                                <a href="assets/img/portfolio/javascriptgame.png" target="_blank">
+              									  <img class="img-fluid rounded mb-5" src="assets/img/portfolio/javascriptgame.png" alt="JavaScipt Game Canvas"/>
+                                </a>
+                                <!-- Portfolio Modal - Text-->
+              									<b><p class="mb-5 text-center">The game can be found <a href="https://users.aber.ac.uk/jar59/cs25320_cw/Part2_own_game/about.html" target="_blank"> here.</a> </p></b>
+                                <div class="text-center">
+                                  <h3>Skills & Technologies Used</h3>
+                                </div>
+                                <br/>
+              									<h5>Skills</h5>
+              									<ul>
+              										<li>Game Design</li>
+              										<li>JavaScript Coding</li>
+                                  <li>Problem Solving</li>
+                                  <li>Game Testing</li>
+              									</ul>
+                                <br/>
+              									<h5>Technologies</h5>
+              									<ul>
+              										<li>HTML and CSS were used to create the base website. </li>
+              										<li>JavaScipt was used to create the game itself, within the HTML canvas element.</li>
+              									</ul>
+              									<br/>
+              									<div class="text-center">
+              										<button class="btn btn-primary" ref="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+              									</div>
+              								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal5Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body">
+                        <div class="container">
+                          <div class="row justify-content-center">
+                              <div class="col-lg-8">
+                                  <!-- Portfolio Modal - Title-->
+                                  <h2 class="portfolio-modal-title text-secondary mb-0 text-center">Future Projects</h2>
+                                  <br/>
+                                  <br/>
+                                  <!-- Portfolio Modal - Text-->
+                                  <div class="text-center">
+                                    <p class="mb-5">Currently, I am working on UX/UI game designs. Check out the section below to view my work so far!</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <div class="text-center">
+                                    <h2 class="portfolio-modal-title text-secondary mb-0">Cyberpunk 2077<br/> Main Menu Concept UI</h2>
+                                    <br/>
+                                    <h5 class="text-secondary mb-0">Select an image to make it larger</h5> <p class="text-secondary mb-0 text-center">(Opens in new tab)</p>
+                                    <br/>
+                                    <h5>Background</h5>
+                                    <p>Cyberpunk 2077 is one of the most anticipated games of the year, however, there is not much footage of the game. So, I wanted to create the main menu UI based on the little information that has been shown so far.</p>
+                                    <br/>
+                                    <h5>Research</h5>
+                                    <p>First, I researched the game developers' previous game <a href="https://thewitcher.com/en/witcher3" target="_blank">The Witcher 3</a>, where I investigated the main menu UI design. </p>
+                                    </div>
+                                    <!-- Portfolio Modal - Text-->
+                                    <a href="assets/img/portfolio/CB77Menu.png" target="_blank">
+                                      <img class="img-fluid rounded mb-5" src="assets/img/portfolio/CB77Menu.png" alt="Cyberpunk 2077 Main Menu Concept Art"/>
+                                    </a>
+                                    <div class="text-center">
+                                      <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal6Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <!-- Portfolio Modal - Title-->
+                                        <div class="text-center">
+                                        <h2 class="portfolio-modal-title text-secondary mb-0">Untitled Car Mobile Game</h2>
+                                        <br/>
+                                        <h5 class="text-secondary mb-0">Select an image to make it larger</h5> <p class="text-secondary mb-0 text-center">(Opens in new tab)</p>
+                                        <br/>
+                                        <h5>Background</h5>
+                                        <p>While learning to use <a href="https://www.figma.com/" target="_blank">Figma</a>, I decided to create a UX/UI for a mobile game. I settled on a car racing game and began creating UX designs for the game.</p>
+                                        <br/>
+                                        <h5>Wireframe designs</h5>
+                                        <p>The first wireframe designs I made were to establish the menu system and the general layout of a particular section of the game.</p>
+                                        </div>
+                                        <!-- Portfolio Modal - Text-->
+                                        <a href="assets/img/portfolio/carux.png" target="_blank">
+                                          <img class="img-fluid rounded mb-5" src="assets/img/portfolio/carux.png" alt="Cyberpunk 2077 Main Menu Concept Art"/>
+                                        </a>
+                                        <a href="assets/img/portfolio/carux1.png" target="_blank">
+                                          <img class="img-fluid rounded mb-5" src="assets/img/portfolio/carux1.png" alt="Cyberpunk 2077 Main Menu Concept Art"/>
+                                        </a>
+                                        <div class="text-center">
+                                          <p>Both designs are similar, however, I prefer the 2nd wireframe design so I will be creating a UI design based on that wireframe.</P>
+                                        </div>
+                                        <div class="text-center">
+                                          <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">ABOUT</h2>
+                </div>
+				        <br/>
+				        <br/>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ml-auto">
+                        <p class="pre-wrap lead">Passionate BSc (Hons) Internet Computing and System Administration graduate. Graduating with a strong 2:1 from Aberystwyth University.</p>
+                    </div>
+                    <div class="col-lg-4 mr-auto">
+                        <p class="pre-wrap lead">I am a hard-working and enthusiastic individual who strives for perfection in every task. I work well with others and take up a natural leadership role within groups. Currently looking for a job in UI/UX design or Front End Web Development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary d-inline-block mb-0">CONTACT</h2>
+                </div>
+				        <br/>
+				        <br/>
+                <!-- Contact Section Content-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
+                            <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:jamierichards1@hotmail.co.uk">jamierichards1@hotmail.co.uk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="mb-4"></h4>
+                        <p class="pre-wrap lead mb-0"></p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="mb-4">SOCIAL MEDIA</h4><a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.linkedin.com/in/jamie-ratuszny-richards/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="mb-4"></h4>
+                        <p class="pre-wrap lead mb-0"> </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Copyright Section-->
+        <section class="copyright py-4 text-center text-white">
+            <div class="container"><small class="pre-wrap">Copyright © Jamie Ratuszny Richards 2020 <br/><a href="https://icons8.com/" target="_blank">icons8.com</small></div>
+        </section>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
