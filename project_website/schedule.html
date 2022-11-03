@@ -21,10 +21,10 @@
       <a class="navbar-brand" href="https://discord.gg/pNDkwES" target="_blank">
         <img src="images/Discord/Discord-Logo-White.png" width="30" height="30" alt="discordlogo">
       </a>
-      <a class="navbar-brand" href="https://twitter.com/ImBarnacleBoy" target="_blank">
+      <a class="navbar-brand" href="https://twitter.com" target="_blank">
         <img src="images/Twitter/Twitter_Social_Icon_Rounded_Square_White.png" width="30" height="30" alt="twitterlogo">
       </a>
-      <a class="navbar-brand" href="https://twitch.com/Purple_foundation" target="_blank">
+      <a class="navbar-brand" href="https://twitch.com" target="_blank">
         <img src="images/Twitch/TwitchGlitchWhite.png" width="30" height="30" alt="twitchlogo">
       </a>
       <hr/>
@@ -93,13 +93,6 @@
       <h1>Stream Schedule</h1>
     </div>
     <br/>
-    <div class="row buttonalign">
-      <div class="float-right">
-        <form action="schedule/schedule_edit.html">
-          <button class="btn btn-primary btn-lg">Edit schedule</button>
-        </form>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -122,7 +115,7 @@
   <br/>
   <div class="row" style="margin-left: 1%;">
     <div class="col">
-      <h4>You can find my stream at <a href="https://twitch.tv/Purple_Foundation" target="_blank">twitch.tv/Purple_Foundation</a></h4>
+      <h4>Please note that the below times are UK local times.</h4>
     </div>
   </div>
 </div>
@@ -146,6 +139,21 @@
     Link: https://getbootstrap.com/docs/4.0/content/tables/ -->
 
 <div class="container-fluid">
+  <div class="row">
+    <div class="col text-center">
+      <h5>*Please note, for the original website the below was created using PHP. As this website is hosted via Github (No web server) the below is an example of what it looked like when setup.*</h5>
+      <br/>
+      <h5>To view original PHP code, please view page source. It has been commented out</h5>
+  </div>
+  </div>
+</div>
+
+<br/>
+
+<br/>
+
+
+<div class="container-fluid">
     <table class="table table-hover table-bordered" align="center" style="width: 75%;">
       <thead class="thead-dark">
         <tr>
@@ -155,6 +163,7 @@
         </tr>
       </thead>
       <tbody>
+        <!--
         <?php
           /*The following section requires the files below to be accessible in order for this PHP
           file to run. If these files are not available then the PHP file will produce a fatal error.*/
@@ -198,6 +207,42 @@
           $schedule = null;
           $conn = null;
         ?>
+      -->
+      <tr style="background-color:#90EE90;">
+        <td> Monday</td>
+        <td> 17:00</td>
+        <td> 23:00</td>
+      </tr>
+      <tr style="background-color:#90EE90;">
+        <td> Tuesday</td>
+        <td> 17:00</td>
+        <td> 23:00</td>
+      </tr>
+      <tr style="background-color:#FFCCCB;">
+        <td> Wednesday</td>
+        <td> No Stream</td>
+        <td> No Stream</td>
+      </tr>
+      <tr style="background-color:#90EE90;">
+        <td> Thursday</td>
+        <td> 17:00</td>
+        <td> 23:00</td>
+      </tr>
+      <tr style="background-color:#FFCCCB;">
+        <td> Friday</td>
+        <td> No Stream</td>
+        <td> No Stream</td>
+      </tr>
+      <tr style="background-color:#90EE90;">
+        <td> Saturday</td>
+        <td> 17:00</td>
+        <td> 23:00</td>
+      </tr>
+      <tr style="background-color:#FFCCCB;">
+        <td> Sunday</td>
+        <td> No Stream</td>
+        <td> No Stream</td>
+      </tr>
       </tbody>
     </table>
   <br/>
