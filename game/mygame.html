@@ -1,0 +1,263 @@
+<!-- Author: Jamie Ratuszny Richards - jar59@aber.ac.uk -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ball Dribble</title>
+
+    <!--
+    Below sets the style of the canvas. Here I can change the background color and where the canvas is located
+    on the actual web page.
+    -->
+    <link href="website.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div id="banner">
+    <h1>My New Game: Ball Dribble</h1>
+</div>
+
+<div id="menu">
+    <p><a href="mygame.html">Game</a></p>
+    <hr/>
+    <p><a href="about.html">About The Game</a></p>
+    <hr/>
+    <p><a href="help.html">Help</a></p></div>
+
+<div id="form">
+    <h2>To save your score please enter your name below!</h2>
+    <form action="/nothinglol.php" target="_self" method="GET">
+        <input type="text" name="playername">
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+</div>
+
+<div id="about">
+    <!-- Below I have included an error message that will display if the canvas is not created -->
+    <canvas id="stage" width="900" height="700">
+        Your browser does not support the canvas element.
+    </canvas>
+
+    <script>
+        /*I have decided to include all of the javascript code in this html document rather than using the "src" method
+         *of referencing a javascript file. Usually, I would include it in a separate file but this html document is
+         *specifically made for the game itself. When someone reads the source code I want them to be able to simply
+         *scroll down and read the entirety without having to be linked to a separate file.*/
+
+
+        /*Below are all of my global variables. At first I didn't declare these here but later within each function.
+         *However, I soon realised this wasn't a good idea as I then couldn't reference them multiple times in every function, this is
+         *why they are all here.*/
+
+        var canvas = document.getElementById("stage"); //getting the canvas element above which is named "Stage".
+        var ctx = canvas.getContext("2d");
+        var circleX = 100; //Setting up the x coordinates for the circle created
+        var circleY = 350; //Setting up the y coordinates for the circle created
+        var circleRadius = 15;  //How big the circle is
+        var blockY1 = -50;    //Sets blockY1 coordinates to be -50
+        var blockY3 = -50;    //Sets blockY3 coordinates to be -50
+        var blockY2 = 750;  //Sets blockY2 coordinates to be 750
+        var blockY4 = 750;  //Sets blockY4 coordinates to be 750
+        var blockX1 = Math.floor((Math.random() * 400) + 300);  //Sets a random starting coordinate between 300-400 for this block
+        var blockX2 = Math.floor((Math.random() * 400) + 300);   //Sets a random starting coordinate between 300-400 for this block
+        var blockX3 = Math.floor((Math.random() * 700) + 650);   //Sets a random starting coordinate between 600-700 for this block (Making sure it cannot be in the same position as blockX2)
+        var blockX4 = Math.floor((Math.random() * 700) + 650);   //Sets a random starting coordinate between 600-700
+        var blockWidth = 40;    //Sets how wide the blocks can be. I have only one variable for this as I want all the blocks to nbe the same width.
+        var blockHeight1 = Math.floor((Math.random() * 270) + 160);  //Sets a random starting height between 160-270. 270+270=540 which is less than the size of the canvas, thus shouldn't overlap
+        var blockHeight2 = Math.floor((Math.random() * -300) + -160); //Sets a random starting height between -310 - -160.
+        var blockHeight3 = Math.floor((Math.random() * 270) + 160);
+        var blockHeight4 = Math.floor((Math.random() * -300) + -160);
+        var score = 0;
+
+        /*All of the functions you can see below could have been simply placed inside of the draw()
+         *function however, that would make the code very difficult to understand, not just for me
+         *but also for other users who want to look at the source code. */
+
+        <!-- The drawCircle() function below is used to create the circle-->
+
+        function drawCircle() {
+            ctx.beginPath();    //starts a new path (Allows me to create ctx.arc (A Circle))
+            ctx.arc(circleX, circleY, circleRadius, 0, 2 * Math.PI);  //Creates the circle with certain variables (Can be seen above)
+            ctx.fillStyle = "#ffff00";  //Allows me to set the color of the circle
+            ctx.fill();     //fills the circle with said color
+            ctx.stroke();   //Adds a border to the circle created
+            ctx.closePath();    //closes the current path that was created by "ctx.beginPath()"
+        }
+
+        <!-- The drawBlocks() function below is used to create the rectangles-->
+
+        function drawBlocks() {
+            ctx.beginPath();    //starts a new path (Allows me to create ctx.rect (A Rectangle))
+            ctx.rect(blockX1, blockY1, blockWidth, blockHeight1);   //creating a rectangle with certain variables (Can be seen above)
+            ctx.rect(blockX2, blockY2, blockWidth, blockHeight2);   //creating a rectangle with certain variables (Can be seen above)
+            ctx.rect(blockX3, blockY3, blockWidth, blockHeight3);   //creating a rectangle with certain variables (Can be seen above)
+            ctx.rect(blockX4, blockY4, blockWidth, blockHeight4);   //creating a rectangle with certain variables (Can be seen above)
+            ctx.fillStyle = "#014cff";      //Allows me to set the color of the rectangles
+            ctx.fill();     //fills the circle with said color
+            ctx.stroke();       //Adds a border to the circle created
+            ctx.closePath();    //closes the current path that was created by "ctx.beginPath()"
+            blockX1 += -1;      //Makes the block move across the screen from right to left.
+            blockX2 += -1;      //Makes the block move across the screen from right to left.
+            blockX3 += -1;      //Makes the block move across the screen from right to left.
+            blockX4 += -1;      //Makes the block move across the screen from right to left.
+        }
+
+
+        <!-- The text() function below is used to create the text you can see on the canvas-->
+
+        function text() {
+            ctx.font = "15px Calibri";      //This sets the font size and style
+            ctx.fillStyle = "red";          //This changes the font color to red
+            ctx.fillText("Version 1.0", 5, 15);
+            /*This sets what we want inside of the text, here I simply have
+                                                       "Version 1.0". Then the coordinates for where the text should appear.*/
+        }
+
+        <!-- The theScore() function below is used to write out the "Score:" on the screen and assign score to the text field-->
+
+        function theScore() {
+            ctx.font = "20px Calibri";
+            ctx.fillStyle = "white";
+            ctx.fillText("Score: " + score, 5, 40)
+        }
+
+        /*The move() function below is used to allow the user to use the keyboard to move up and down.
+         *Originally, I planned to only use the arrow keys to control the circle. However, after some thought
+         *I realised that some keyboards don't have arrow keys. Thus, I decided to also include an alternative
+         *method. This being the simple "W" and "S" key. This is considered the other default up and down keys
+         *for the keyboard. */
+
+        function move(event) {
+            if (event.keyCode === 38) { //keycode 38 represents the "up" arrow on the keyboard.
+                circleY -= 10;      //when the user presses the up arrow, move the circle 10 coordinates up on canvas
+            }
+            else if (event.keyCode === 40) { //keycode 40 represents the "down" arrow on the keyboard.
+                circleY += 10;     //when the user presses the down arrow, move the circle 10 coordinates down on canvas
+            }
+            else if (event.keyCode === 87) { //keycode 87 represents the "W" key on the keyboard.
+                circleY -= 10;      //when the user preses the w key, move the circle 10 coordinates up on the canvas
+            }
+            else if (event.keyCode === 83) {  //keycode 83 represents the "S" key on the keyboard.
+                circleY += 10;      //when the user presses the s key, move the circle 10 coordinates down on the canvas
+            }
+        }
+
+        <!-- The wallCollision() function below is used to check whether the circle is colliding with the canvas wall above and below-->
+        <!-- I only have the top and bottom wall here because the player can't move left and right, so there is no need to setup the other walls-->
+
+        function wallCollision() {
+            if (circleY > 700 || circleY < 5) {  //If the y axis is greater than or less than the height of the canvas
+                circleY = -circleY;              //then reverse the circle
+            }
+        }
+
+        <!-- The blockCollision() function below is used to check whether the circle is in contact with a block (rectangle)-->
+
+        /*Each if statement below is essentially doing the same thing. However, I need four different if statements
+         *because I have four different blocks(Rectangles). Essentially I have four different criteria to check whether
+         *the circle is touching a block and if they are touching then bring up a pop up to the user saying that the
+         *game is over*/
+
+        /*I'm making sure that if the circleX coordinate is > the blockX in question & if the circleX < the blockX +
+         *that block width & if the circleY coordinate is > the blockY & the circleY is < the blockY + the blockHeight.
+         *I originally tried this without including the block width and height, however, this meant that I received a
+         *game over message even if the circle was below or above the rectangle. It was just looking for the X and Y
+         *without context to the object dimensions. Now, the game will check the dimensions of the block and take that
+         *into account when the circle hits it.
+         *Also, for the blocks on the bottom of the canvas I had to swap the greater than and less than symbols around
+         *because they are at the opposite location on the canvas in context.
+         *
+         *The final if statement below is here to increment the score on the canvas. It's essentially saying that if the
+         *player hasn't collided with the blocks then update the score and display it back to the user. I wasn't sure
+         *what kind of condition to use for this, as it needed an expression to run. I have added the simple condition
+         *just so that it can be updated without any errors occurring.*/
+
+        function blockCollision() {
+            if (circleX > blockX1 && circleX < blockX1 + blockWidth && circleY > blockY1 && circleY < blockY1 + blockHeight1) {
+                alert("Game Over");
+            }
+            else if (circleX > blockX2 && circleX < blockX2 + blockWidth && circleY < blockY2 && circleY > blockY2 + blockHeight2) {
+                alert("Game Over");
+            }
+            else if (circleX > blockX3 && circleX < blockX3 + blockWidth && circleY > blockY3 && circleY < blockY3 + blockHeight3) {
+                alert("Game Over");
+            }
+            else if (circleX > blockX4 && circleX < blockX4 + blockWidth && circleY < blockY4 && circleY > blockY4 + blockHeight4) {
+                alert("Game Over");
+            }
+            else if (circleX !== blockX1 || blockX2 || blockX3 || blockX4) {
+                score++;
+            }
+        }
+
+        <!-- The blockOnBlockCollision() function below is used to detect whether if two blocks are touching-->
+
+        /*In the games current state it doesn't seem to prove affective. I was trying to incorporate the same logic as
+         *used above for the blockCollision with the circle. I have tested the game for over ten minutes and haven't
+         *noticed any block on block collision occurring. Although, this could just be a coincidence.*/
+
+        function blockOnBlockCollision() {
+            if (blockX1 > blockX3 && blockX1 < blockX3 + blockWidth && blockY1 > blockY3 && blockY1 < blockY3 + blockHeight1) {
+                blockX1 = +500;
+            }
+            else if (blockX2 > blockX4 && blockX2 < blockX4 + blockWidth && blockY2 > blockY4 && blockY2 < blockY4 + blockHeight2) {
+                blockX2 = +500;
+            }
+            else if (blockX1 > blockX2 && blockX1 < blockX2 + blockWidth && blockX1 > blockX2 && blockX1 < blockX2 + blockHeight1) {
+                blockX1 = +500;
+            }
+            else if (blockX2 > blockX1 && blockX2 < blockX1 + blockWidth && blockX2 > blockX1 && blockX2 < blockX1 + blockHeight2) {
+                blockX2 = +500;
+            }
+        }
+
+        <!-- The moveBack() function below is how I can get the rectangles to simulate a never ending game-->
+        /*Each if is essentially doing the same thing, however the bottom rectangles have negative values.
+         *Originally I had the x coordinate values being randomly generated. However, I soon realised that this
+         *makes the blocks clash together a lot more often. I have played the game with and without the random
+         *number for the coordinates and I much prefer the same value. It keeps the game flowing and makes it more
+         *enjoyable to the user.*/
+
+        function moveBack() {
+            if (blockX1 < 0) {       //If blockX1 is less than the canvas width
+                blockX1 = +900;    //Reset the rectangle to the start of end width of the canvas
+                blockHeight1 = Math.floor((Math.random() * 270) + 200);  //Calculate a "random" new block height between 200-270
+            }
+            else if (blockX2 < 0) {
+                blockX2 = +900;
+                blockHeight2 = Math.floor((Math.random() * -270) + -200);
+            }
+            else if (blockX3 < 0) {
+                blockX3 = +900;
+                blockHeight3 = Math.floor((Math.random() * 270) + 200);
+            }
+            else if (blockX4 < 0) {
+                blockX4 = +900;
+                blockHeight4 = Math.floor((Math.random() * -270) + -200);
+            }
+        }
+
+        <!-- The draw() function below is the main function. Here I am calling all the functions above -->
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);   //this clears the canvas when the objects moves
+            drawCircle();   //calls to the drawCircle function above
+            drawBlocks();   //calls to the drawBlocks function above
+            text();     //calls to the text function above
+            wallCollision();    //calls to the wallCollision function above
+            blockCollision();   //calls to the blockCollision function above
+            blockOnBlockCollision();    //calls to the blockOnBlockCollision function above
+            moveBack();     //calls to the moveBack function above.
+            theScore();
+        }
+
+        setInterval(draw, 4); //the draw function will be executed every 10 milliseconds.
+        window.onkeydown = move;    //This checks whether a key is being pressed in the "move" function above.
+    </script>
+</div>
+<div id="footer">
+    The open source football pitch background was download from this website: https://opengameart.org/content/poor-handbal-field
+</div>
+</body>
+</html>
